@@ -1,7 +1,7 @@
-import strutils
+import sequtils
+
+echo "foobar"
 
 var x = 1
-let y = 1
-const z = 1
-
-echo "test"
+let y = 2
+const z = 3
