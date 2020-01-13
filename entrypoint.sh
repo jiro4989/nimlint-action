@@ -7,11 +7,19 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 nim --version
 
 nim check $INPUT_SRC 2>&1 > /dev/null |
-  grep -E "^([^)]+)\) (Hint|Warning|Error): .*\[[^]]+\]$"
+  grep -E "^([^)]+)\) (Hint|Warning|Error): .*\[[^]]+\]$" |
+  sed \
+    -e "s/(/:/" \
+    -e "s/, /:/" \
+    -e "s/) /:/"
 
 nim check $INPUT_SRC 2>&1 > /dev/null |
   grep -E "^([^)]+)\) (Hint|Warning|Error): .*\[[^]]+\]$" |
-  reviewdog -efm="%f(%l, %c) %m" -name="nimlint" -reporter="${INPUT_REPORTER:-github-pr-check}"
+  sed \
+    -e "s/(/:/" \
+    -e "s/, /:/" \
+    -e "s/) /:/" |
+  reviewdog -efm="%f:%l:%c:%m" -name="nimlint" -reporter="${INPUT_REPORTER:-github-pr-check}"
 
 # if [ "${INPUT_REPORTER}" == 'github-pr-review' ]; then
 #   # Use github-pr-review reporter to format result to include link to rule page.
