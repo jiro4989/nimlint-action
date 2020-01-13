@@ -7,7 +7,7 @@ inputs:
     required: true
   level:
     description: 'Report level for reviewdog [info,warning,error]'
-    default: 'info'
+    default: 'error'
   reporter:
     description: |
       Reporter of reviewdog command [github-pr-check,github-pr-review].
