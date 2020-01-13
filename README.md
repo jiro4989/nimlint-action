@@ -58,7 +58,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
-          src: 'tests/*.nim'
+          src: 'src/*.nim'
 ```
 
 ## License
