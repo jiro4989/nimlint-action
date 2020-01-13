@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: nimlint
-        uses: jiro4989/nimlint-action@v1
+        uses: jiro4989/nimlint-action@master
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
