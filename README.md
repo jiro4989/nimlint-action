@@ -30,7 +30,7 @@ github-pr-review can use Markdown and add a link to rule page in reviewdog repor
 
 ### `src`
 
-Optional. Flags and args of eslint command. Default: 'src/*.nim'
+Optional. Nim source code path glob. Default: 'src/*.nim'
 
 ### `ignore_regexp`
 
