@@ -7,6 +7,9 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 nim --version
 
 nim check $INPUT_SRC 2>&1 > /dev/null |
+  grep -E "^([^)]+)\) (Hint|Warning|Error): .*\[[^]]+\]$"
+
+nim check $INPUT_SRC 2>&1 > /dev/null |
   grep -E "^([^)]+)\) (Hint|Warning|Error): .*\[[^]]+\]$" |
   reviewdog -efm="%f(%l, %c) %m" -name="nimlint" -reporter="${INPUT_REPORTER:-github-pr-check}" -level="${INPUT_LEVEL}"
 
