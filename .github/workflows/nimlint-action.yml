@@ -15,6 +15,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
           src: 'tests/*.nim'
+          ignore_regexp: 'Hint:'
 
       # https://github.com/jiro4989/nimlint-action/runs/386572003
       # - name: nimlint-github-pr-check
