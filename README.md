@@ -54,7 +54,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: nimlint-github-pr-review
-        uses: jiro4989/nimlint-action@master
+        uses: jiro4989/nimlint-action@v1.0.0
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-pr-review # Change reporter.
