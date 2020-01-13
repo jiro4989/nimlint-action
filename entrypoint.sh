@@ -19,7 +19,7 @@ nim check $INPUT_SRC 2>&1 > /dev/null |
     -e "s/(/:/" \
     -e "s/, /:/" \
     -e "s/) /:/" |
-  reviewdog -efm="%f:%l:%c:%m" -name="nimlint" -reporter="${INPUT_REPORTER:-github-pr-check}"
+  reviewdog -efm="%f:%l:%c:%m" -name="nimlint" -reporter="${INPUT_REPORTER:-github-pr-check}" -level="${INPUT_LEVEL}"
 
 # if [ "${INPUT_REPORTER}" == 'github-pr-review' ]; then
 #   # Use github-pr-review reporter to format result to include link to rule page.
