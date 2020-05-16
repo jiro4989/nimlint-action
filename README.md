@@ -1,5 +1,11 @@
 # nimlint-action
 
+**INFO:** This repository moved to [reviewdog/action-nimlint](https://github.com/reviewdog/action-nimlint).
+I will continue to maintenance that, and i will not maintenance this repository.
+Please you use that too.
+
+---
+
 This action lints Nim codes.
 nimlint-action is inspired by [reviewdog/action-eslint](https://github.com/reviewdog/action-eslint).
 
