@@ -45,6 +45,7 @@ Optional. Ignore message pattern. Default: ''
 ## Example usage
 
 You also need to install [nim](https://github.com/nim-lang/Nim).  
+
 ### [.github/workflows/nimlint-action.yml](.github/workflows/nimlint-action.yml)
 
 ```yml
@@ -57,7 +58,7 @@ jobs:
     name: runner / nimlint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: nimlint-github-pr-review
         uses: jiro4989/nimlint-action@v1.0.0
